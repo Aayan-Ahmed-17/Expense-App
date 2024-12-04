@@ -18,23 +18,42 @@ function ExpenseForm(initialValue = '', mode = 'add') {
     // };
 
     return(
-        <form className='max-w-[40rem] min-h-72 grid mx-auto border-2 border-slate-500 rounded-xl mt-8 pt-2'>
-            <h2 className='mx-auto'>
+        <form className='max-w-[29rem] grid grid-rows-6 min-h-64 mx-auto border-2 border-slate-500 rounded-xl mt-8 pt-2'>
+            <h2 className='mx-auto text-xl row-span-1'>
               {/* {mode === 'add' ? 'New Todo' : 'Edit Todo'} */}
               Enter Informations
             </h2>
-          <div className="grid grid-cols-3 max-h-24">
+          <div className="grid grid-cols-2 gap-3 px-4 row-span-4 mt-2 mb-12">
             {/* <ExpenseInput
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Enter Task Here"
               defaultValue={initialValue}
             /> */}
+            <ExpenseInput />
+            <ExpenseInput />
+            <ExpenseInput />
+            <ExpenseInput />
+            {/* <input
+              placeholder={"enter val"}
+              className="input input-bordered max-h-11 text-lg rounded px-2"
+              maxLength={50}
+              />
             <input
               placeholder={"enter val"}
-              // className="input input-bordered w-4/5 max-h-8 mx-auto"
+              className="input input-bordered max-h-11 text-lg rounded px-2"
               maxLength={50}
             />
+            <input
+              placeholder={"enter val"}
+              className="input input-bordered max-h-11 text-lg rounded px-2"
+              maxLength={50}
+              />
+            <input
+              placeholder={"enter val"}
+              className="input input-bordered max-h-11 text-lg rounded px-2"
+              maxLength={50}
+            /> */}
             {/* {error && (
               alert(error)
             )} */}
