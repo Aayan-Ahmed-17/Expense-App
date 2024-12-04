@@ -1,14 +1,11 @@
 // import React from 'react'
 
 const ExpenseInput = ({ value, onChange, placeholder }) => (
-  <select className="select w-full max-w-xs">
-    <option disabled selected>Pick your favorite Simpson</option>
-    <option>Homer</option>
-    <option>Marge</option>
-    <option>Bart</option>
-    <option>Lisa</option>
-    <option>Maggie</option>
-  </select>
+    <input
+      type="text"
+      placeholder="Enter Value"
+      className="input input-bordered w-full max-w-xs px-2"
+    />
   );
 
 export default ExpenseInput

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ExpenseInput from './ExpenseInput';
+import ExpenseType from './ExpenseType';
+import ExpenseCategory from './ExpenseCategory';
 
 function ExpenseForm(initialValue = '', mode = 'add') {
     // const [input, setInput] = useState(initialValue);
@@ -30,8 +32,8 @@ function ExpenseForm(initialValue = '', mode = 'add') {
               placeholder="Enter Task Here"
               defaultValue={initialValue}
             /> */}
-            <ExpenseInput />
-            <ExpenseInput />
+            <ExpenseType />
+            <ExpenseCategory />
             <ExpenseInput />
             <ExpenseInput />
             {/* <input
