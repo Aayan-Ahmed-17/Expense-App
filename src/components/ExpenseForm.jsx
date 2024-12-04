@@ -9,11 +9,11 @@ import ExpenseAmount from './ExpenseAmount';
 function ExpenseForm(initialValue = '', mode = 'add') {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [error, setError] = useState('');
-  
+    const selectedType = watch('type')
+
     const onSubmit = (data) => {
       console.log(data)
-    }
-    // const handleSubmit = async (e) => {
+    }    // const handleSubmit = async (e) => {
     //   e.preventDefault();
     //   if (!input.trim()) {
     //     setError('Task cannot be empty');
@@ -39,8 +39,8 @@ function ExpenseForm(initialValue = '', mode = 'add') {
               placeholder="Enter Task Here"
               defaultValue={initialValue}
             /> */}
-            <ExpenseType register={register}/>
-            <ExpenseCategory register={register}/>
+            <ExpenseType register={register} watch={watch}/>
+            <ExpenseCategory register={register} selectedType={selectedType}/>
             <ExpenseItem register={register}/>
             <ExpenseAmount register={register}/>
             {/* <input
