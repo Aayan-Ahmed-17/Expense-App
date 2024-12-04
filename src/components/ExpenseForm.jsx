@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ExpenseInput from './ExpenseInput';
+import ExpenseInput from './ExpenseItem';
 import ExpenseType from './ExpenseType';
 import ExpenseCategory from './ExpenseCategory';
 import { useForm } from 'react-hook-form';
-import ExpenseItem from './ExpenseInput';
+import ExpenseItem from './ExpenseItem';
 import ExpenseAmount from './ExpenseAmount';
 
 function ExpenseForm(initialValue = '', mode = 'add') {
