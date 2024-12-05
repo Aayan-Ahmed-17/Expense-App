@@ -9,6 +9,7 @@ function ExpenseType({register , watch}) {
     //     console.log(watch('type'))
     //     console.log(type)
     // },[type])
+    // chkking
     return (
             <select className="select w-full max-w-xs px-1" name="type" {...register("type")} defaultValue={0}>
                 <option disabled>Select Type</option>
