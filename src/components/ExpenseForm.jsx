@@ -8,7 +8,7 @@ import ExpenseAmount from './ExpenseAmount';
 function ExpenseForm(initialValue = '', mode = 'add') {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
   
-    const selectedValue = watch('selectedValue');
+    const selectedType =  watch('type')
 
     const [error, setError] = useState('');
     // const selectedType = watch('type')
@@ -18,7 +18,7 @@ function ExpenseForm(initialValue = '', mode = 'add') {
     // }, [watch('type')])
 
     const onSubmit = (data) => {
-      console.log(data)
+      // setSelectedType(data.type)
     }
 
     return(
@@ -36,7 +36,7 @@ function ExpenseForm(initialValue = '', mode = 'add') {
               defaultValue={initialValue}
             /> */}
             <ExpenseType register={register} watch={watch}/>
-            <ExpenseCategory register={register} />
+            <ExpenseCategory register={register} selectedType={selectedType}/>
             <ExpenseItem register={register}/>
             <ExpenseAmount register={register}/>
             {/* <input
