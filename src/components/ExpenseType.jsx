@@ -11,9 +11,9 @@ function ExpenseType({register , watch}) {
     // },[type])
     // chkking
     return (
-            <select className="select w-full max-w-xs px-1" name="type" {...register("type")} defaultValue={0}>
-                <option disabled>Select Type</option>
-                <option selected value={0}>Cash In</option>
+            <select className="select w-full max-w-xs px-1" name="type" {...register("type" , {required: true})} defaultValue=''>
+                <option disabled value=''>Select Type</option>
+                <option value={0}>Cash In</option>
                 <option >Cash Out</option>
             </select>
     );

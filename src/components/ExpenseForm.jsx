@@ -1,40 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import ExpenseInput from './ExpenseItem';
+import { useForm } from 'react-hook-form';
 import ExpenseType from './ExpenseType';
 import ExpenseCategory from './ExpenseCategory';
-import { useForm } from 'react-hook-form';
 import ExpenseItem from './ExpenseItem';
 import ExpenseAmount from './ExpenseAmount';
 
 function ExpenseForm(initialValue = '', mode = 'add') {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm({
-      defaultValues: {
-        selectedValue: 'option1',  // Default value for 'selectedValue' field
-      }
-    });
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
   
     const selectedValue = watch('selectedValue');
 
     const [error, setError] = useState('');
     // const selectedType = watch('type')
     
-    useEffect(()=>{
-      console.log(selectedValue)
-    }, [watch('type')])
+    // useEffect(()=>{
+    //   console.log(selectedValue)
+    // }, [watch('type')])
 
     const onSubmit = (data) => {
       console.log(data)
-    }    // const handleSubmit = async (e) => {
-    //   e.preventDefault();
-    //   if (!input.trim()) {
-    //     setError('Task cannot be empty');
-    //     return;
-    //   }
-      
-    //   await onSubmit(input);
-    //   setInput('');
-    //   setError('');
-    // };
+    }
 
     return(
         <form onSubmit={handleSubmit(onSubmit)} className='max-w-[29rem] grid grid-rows-6 min-h-64 mx-auto border-2 border-slate-500 rounded-xl mt-8 pt-2'>

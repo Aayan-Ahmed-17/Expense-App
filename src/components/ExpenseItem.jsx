@@ -5,7 +5,7 @@ const ExpenseItem = ({ value, onChange, placeholder , register }) => (
       type="text"
       placeholder="Enter Item Name"
       className="input input-bordered w-full max-w-xs px-2"
-      {...register("item", {required: true})}
+      // {...register("item", {required: true})}
     />
   );
 
