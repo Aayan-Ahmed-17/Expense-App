@@ -5,22 +5,16 @@ import ExpenseCategory from "./ExpenseCategory";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseAmount from "./ExpenseAmount";
 
-function ExpenseForm({ initialValue = "", mode = "add", onCancel }) {
+function ExpenseForm({ initialValue = "", mode = "add", onCancel , watch , handleSubmit, onSubmit, register}) {
   // const [input, setInput] = useState(initialValue);
   const [error, setError] = useState("");
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
 
   const selectedType = watch("type");
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // setShowForm(!showForm);
-  };
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  //   // setShowForm(!showForm);
+  // };
 
   return (
     <>

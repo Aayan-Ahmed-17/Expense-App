@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const DynamicTable = () => {
+const DynamicTable = ({expenses}) => {
   // State to store the list of entries
-  const [entries, setEntries] = useState([]);
+//   const [entries, setEntries] = useState([]);
   
   // State for form inputs
 //   const [name, setName] = useState('');
@@ -80,12 +80,13 @@ const DynamicTable = () => {
           </tr>
         </thead>
         <tbody>
-          {entries.map((entry) => (
-            <tr key={entry.id} className="hover:bg-gray-50">
-              <td className="py-2 px-0 border border-gray-300 text-center">{entry.id}</td>
-              <td className="p-2 border border-gray-300 text-center">{entry.name}</td>
-              <td className="p-2 border border-gray-300 text-center">{entry.age}</td>
-              <td className="p-2 border border-gray-300 text-center">{entry.email}</td>
+          {expenses.map((entry, index) => (
+            <tr key={index} className="hover:bg-gray-50">
+              <td className="py-2 px-0 border border-gray-300 text-center">{index+1}</td>
+              <td className="p-2 border border-gray-300 text-center">{entry.type ? 'Cash In' : 'Cash Out'}</td>
+              <td className="p-2 border border-gray-300 text-center">{entry.item}</td>
+              <td className="p-2 border border-gray-300 text-center">{entry.category}</td>
+              <td className="p-2 border border-gray-300 text-center">{entry.amount}</td>
             </tr>
           ))}
         </tbody>
