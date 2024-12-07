@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 // import Sidebar from './components/Sidebar'
 
 const Home = () => {
+  const [vals, setVals] = useState('')
   const [expenses, setExpenses] = useState([]); //All todo Array
   const [mode, setMode] = useState("add"); // ['add', 'view']
   const [error, setError] = useState(null);
@@ -13,19 +14,22 @@ const Home = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  //* Add Expense || Edit Expense Will created soon
+  const onSubmit = (data, type) => {
     const newTodo = {
       ...data,
     };
-
     setExpenses((prev) => [...prev, newTodo]);
+    reset()
     setMode("view");
   };
   
   const handleCancel = () => {
+    reset()
   setMode("view");
   setError(null);
 };
@@ -39,6 +43,7 @@ return (
         onCancel={handleCancel}
         register={register}
         watch={watch}
+        // reset={reset}
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
         />

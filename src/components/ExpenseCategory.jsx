@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { cashInCategories, cashOutCategories } from "../utilis/mockData";
 
-function ExpenseCategory({register , selectedType}) {
-    // const [initialType, setInitialType] = useState(true)
+function ExpenseCategory({register , selectedType, initialValue}) {
+    const [selectedOption, setSelectedOption] = useState("");
     useEffect(() => {
+        // setSelectedOption('')
         console.log(selectedType)
     }, [selectedType])
 
@@ -13,7 +14,7 @@ function ExpenseCategory({register , selectedType}) {
     // }, [selectedType])
     
     return (
-            <select className="select w-full max-w-xs px-1" name="category" {...register("category", {required : true})} defaultValue=''>
+            <select className="select w-full max-w-xs px-1" name="category" {...register("category", {required : true})} value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
                 <option disabled value=''>Select Category</option>
                 {selectedType == 1 ? cashInCategories.map((e, i) => {
                     return <option value={e} key={i}>{e}</option>

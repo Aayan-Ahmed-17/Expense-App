@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const DynamicTable = ({expenses}) => {
   // State to store the list of entries
 //   const [entries, setEntries] = useState([]);
+console.log(expenses)
   
   // State for form inputs
 //   const [name, setName] = useState('');
@@ -83,7 +84,7 @@ const DynamicTable = ({expenses}) => {
           {expenses.map((entry, index) => (
             <tr key={index} className="hover:bg-gray-50">
               <td className="py-2 px-0 border border-gray-300 text-center">{index+1}</td>
-              <td className="p-2 border border-gray-300 text-center">{entry.type ? 'Cash In' : 'Cash Out'}</td>
+              <td className="p-2 border border-gray-300 text-center">{entry.type == 1 ? 'Cash In' : 'Cash Out'}</td>
               <td className="p-2 border border-gray-300 text-center">{entry.item}</td>
               <td className="p-2 border border-gray-300 text-center">{entry.category}</td>
               <td className="p-2 border border-gray-300 text-center">{entry.amount}</td>
