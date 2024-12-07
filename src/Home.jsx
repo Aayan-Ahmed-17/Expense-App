@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import ExpenseForm from "./components/ExpenseForm";
 import Table from "./components/Table";
 import { useForm } from "react-hook-form";
+import Header from "./components/Header";
 // import Sidebar from './components/Sidebar'
 
 const Home = () => {
@@ -37,6 +38,7 @@ const Home = () => {
 return (
   <div className="min-h-screen bg-green-100 relative">
     <Navbar />
+    <Header />
     {mode == "add" ? (
       <ExpenseForm
         mode={mode}

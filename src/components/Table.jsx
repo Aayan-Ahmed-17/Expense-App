@@ -32,8 +32,8 @@ console.log(expenses)
 //   };
 
   return (
-    <div className="max-w-4xl m-7 p-4 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold mb-4 text-center">Your Expenses</h2>
+    <div className="max-w-4xl mx-7 my-2 p-4 bg-white shadow-md rounded-lg">
+      <h2 className="text-2xl font-bold mb-4 text-center">Your Expense History</h2>
       
       {/* Form for entering new data */}
       {/* <form className="mb-4 grid grid-cols-3 gap-4">
