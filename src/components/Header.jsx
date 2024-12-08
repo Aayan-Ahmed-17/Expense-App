@@ -1,20 +1,20 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({income, expense}) => {
   return (
     <>
-      <div className="h-32 bg-[#59618b] my-4 mx-7 rounded-lg flex justify-around px-10 py-3 text-3xl uppercase text-slate-100">
-        <div className="">
+      <div className="h-28 bg-[#59618b] my-4 mx-7 rounded-lg flex justify-around px-10  items-center text-3xl uppercase text-slate-100">
+        <div >
           <h2 className="-ml-3">Income</h2>
-          <p className=" text-xl mt-2">$1000000</p>
+          <p className=" text-2xl mt-1 text-green-400">${income}</p>
         </div>
         <div>
           <h2 className="-ml-3">Expensed</h2>
-          <p className=" text-xl mt-2">$10000</p>
+          <p className=" text-2xl mt-1 text-red-500">${expense}</p>
         </div>
         <div>
           <h2 className="-ml-3">Balance</h2>
-          <p className=" text-xl mt-2">$0</p>
+          <p className={`text-2xl mt-1 ${income - expense >= 0 ? 'text-green-400' : 'text-red-500'}`}>${income - expense}</p>
         </div>
       </div>
     </>

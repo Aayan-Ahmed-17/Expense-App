@@ -11,6 +11,8 @@ const Home = () => {
   const [expenses, setExpenses] = useState([]); //All todo Array
   const [mode, setMode] = useState("add"); // ['add', 'view']
   const [error, setError] = useState(null);
+  const [income, setIncome] = useState(0)
+  const [expense, setExpense] = useState(0)
   const {
     register,
     handleSubmit,
@@ -25,8 +27,9 @@ const Home = () => {
       ...data,
     };
     setExpenses((prev) => [...prev, newTodo]);
-    reset()
     setMode("view");
+    data.type == 1 ? setIncome(prev => prev + +data.amount) : setExpense(prev => prev + +data.amount)
+    reset()
   };
   
   const handleCancel = () => {
@@ -38,7 +41,7 @@ const Home = () => {
 return (
   <div className="min-h-screen bg-green-100 relative">
     <Navbar />
-    <Header />
+    <Header income={income} expense={expense}/>
     {mode == "add" ? (
       <ExpenseForm
         mode={mode}
