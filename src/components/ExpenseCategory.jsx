@@ -5,7 +5,6 @@ function ExpenseCategory({register , selectedType, initialValue}) {
     const [selectedOption, setSelectedOption] = useState("");
     useEffect(() => {
         setSelectedOption('')
-        console.log(selectedType)
     }, [selectedType])
 
     // useEffect(()=>{

@@ -1,73 +1,9 @@
 import React, { useState } from 'react';
 
-const DynamicTable = ({expenses}) => {
-  // State to store the list of entries
-//   const [entries, setEntries] = useState([]);
-console.log(expenses)
-  
-  // State for form inputs
-//   const [name, setName] = useState('');
-//   const [age, setAge] = useState('');
-//   const [email, setEmail] = useState('');
-
-//   // Handle form submission
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-    
-//     // Create a new entry object
-//     const newEntry = {
-//       id: entries.length + 1,
-//       name,
-//       age,
-//       email
-//     };
-
-//     // Add new entry to the list
-//     setEntries([...entries, newEntry]);
-
-//     // Clear form inputs
-//     setName('');
-//     setAge('');
-//     setEmail('');
-//   };
-
+const Table = ({expenses}) => {
   return (
     <div className="max-w-4xl mx-7 my-2 p-4 bg-white shadow-md rounded-lg">
       <h2 className="text-2xl font-bold mb-4 text-center">Your Expense History</h2>
-      
-      {/* Form for entering new data */}
-      {/* <form className="mb-4 grid grid-cols-3 gap-4">
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="p-2 border rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-        <input
-          type="number"
-          placeholder="Age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-          className="p-2 border rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="p-2 border rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-        <button 
-          type="submit" 
-          className="col-span-3 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-300"
-        >
-          Add Entry
-        </button>
-      </form> */}
 
       {/* Table to display entries */}
       <table className="w-full border-collapse">
@@ -96,4 +32,4 @@ console.log(expenses)
   );
 };
 
-export default DynamicTable;
+export default Table;

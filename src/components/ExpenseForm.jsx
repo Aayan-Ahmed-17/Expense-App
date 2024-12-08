@@ -15,9 +15,9 @@ function ExpenseForm({
   onSubmit,
   register,
 }) {
-  const [input, setInput] = useState(initialValue);
   const [error, setError] = useState("");
 
+  //* To track the type help us in changing category
   const selectedType = watch("type");
 
   return (
@@ -27,7 +27,6 @@ function ExpenseForm({
         className="max-w-[29rem] grid grid-rows-6 min-h-64 mx-auto border-2 border-slate-500 rounded-xl mt-8 pt-2"
       >
         <h2 className="mx-auto text-xl row-span-1">
-          {/* {mode === 'add' ? 'New Todo' : 'Edit Todo'} */}
           Enter Informations
         </h2>
 
@@ -50,7 +49,6 @@ function ExpenseForm({
             type="submit"
             className="bg-[#6C63FF] text-[#F7F7F7] rounded-sm py-1 px-4 text-md w-1/4 text-center"
           >
-            {/* {mode === 'add' ? 'Add' : 'Save'} */}
             ADD
           </button>
         </div>

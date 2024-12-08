@@ -7,8 +7,7 @@ import Header from "./components/Header";
 // import Sidebar from './components/Sidebar'
 
 const Home = () => {
-  const [vals, setVals] = useState('')
-  const [expenses, setExpenses] = useState([]); //All todo Array
+  const [expenses, setExpenses] = useState([]); //All expenses
   const [mode, setMode] = useState("add"); // ['add', 'view']
   const [error, setError] = useState(null);
   const [income, setIncome] = useState(0)
@@ -22,7 +21,7 @@ const Home = () => {
   } = useForm();
 
   //* Add Expense || Edit Expense Will created soon
-  const onSubmit = (data, type) => {
+  const onSubmit = (data) => {
     const newTodo = {
       ...data,
     };
@@ -32,23 +31,24 @@ const Home = () => {
     reset()
   };
   
+  //* func On Cancel Btn
   const handleCancel = () => {
     reset()
-  setMode("view");
-  setError(null);
-};
+    setMode("view");
+    setError(null);
+  };
 
 return (
   <div className="min-h-screen bg-green-100 relative">
     <Navbar />
     <Header income={income} expense={expense}/>
+    
     {mode == "add" ? (
       <ExpenseForm
         mode={mode}
         onCancel={handleCancel}
         register={register}
         watch={watch}
-        // reset={reset}
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
         />
@@ -56,8 +56,6 @@ return (
       <div className="w-3/4 grid pr-16">
         <Table
         expenses={expenses}
-        // onEdit={handleEdit}
-        // onDelete={handleDeleteTodo}
         />
         <button
           onClick={() => setMode("add")}
