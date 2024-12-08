@@ -4,7 +4,7 @@ import { cashInCategories, cashOutCategories } from "../utilis/mockData";
 function ExpenseCategory({register , selectedType, initialValue}) {
     const [selectedOption, setSelectedOption] = useState("");
     useEffect(() => {
-        // setSelectedOption('')
+        setSelectedOption('')
         console.log(selectedType)
     }, [selectedType])
 
