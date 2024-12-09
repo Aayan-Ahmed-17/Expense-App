@@ -1,12 +1,13 @@
-// import React from 'react'
+import React from 'react'
+import Chart from './Chart'
 
-// const Sidebar = () => {
-//   return (
-//     <div className='w-72 h-[91.5%] overflow-hidden bg-red-200 absolute right-0'>
-      
-//     </div>
-//   )
-// }
+const Sidebar = () => {
+  return (
+    <div className='w-72 h-[91.5%] overflow-hidden bg-red-200 absolute right-0'>
+      <Chart/>
+    </div>
+  )
+}
 
-// export default Sidebar
+export default Sidebar
 
