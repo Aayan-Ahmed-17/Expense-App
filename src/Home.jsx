@@ -42,9 +42,9 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-green-100 relative">
+    <div className="min-h-screen bg-green-100 grid grid-rows-10">
       <Navbar />
-      <Header income={income} expense={expense} />
+      {/* <Header income={income} expense={expense} />
       <Sidebar expenses={expenses}/>
 
       {mode == "add" ? (
@@ -66,7 +66,7 @@ const Home = () => {
             +
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
