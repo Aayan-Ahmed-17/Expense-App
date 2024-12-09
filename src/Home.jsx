@@ -45,7 +45,7 @@ const Home = () => {
     <div className="min-h-screen bg-green-100 relative">
       <Navbar />
       <Header income={income} expense={expense} />
-      <Sidebar/>
+      <Sidebar expenses={expenses}/>
 
       {mode == "add" ? (
         <ExpenseForm

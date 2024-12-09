@@ -10,7 +10,8 @@ const data01 = [
   { name: "Group F", value: 189 },
 ];
 
-const Chart = () => {
+const Chart = ({expenses}) => {
+    console.log("chart==>", expenses)
   return (
     <ResponsiveContainer width="100%" height="100%">
       <PieChart width={400} height={400}>
