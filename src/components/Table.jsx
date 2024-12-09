@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Table = ({expenses}) => {
+const Table = ({expenses, income, expense}) => {
   return (
     <div className="max-w-4xl mx-7 my-2 p-4 bg-white shadow-md rounded-lg">
       <h2 className="text-2xl font-bold mb-4 text-center">Your Expense History</h2>
@@ -13,7 +13,7 @@ const Table = ({expenses}) => {
             <th className="p-2 border border-gray-300">Type</th>
             <th className="p-2 border border-gray-300">Item Name</th>
             <th className="p-2 border border-gray-300">Category</th>
-            <th className="p-2 border border-gray-300">Amount</th>
+            <th className="p-2 border border-gray-300 ">Amount</th>
           </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@ const Table = ({expenses}) => {
               <td className="p-2 border border-gray-300 text-center">{entry.type == 1 ? 'Cash In' : 'Cash Out'}</td>
               <td className="p-2 border border-gray-300 text-center">{entry.item}</td>
               <td className="p-2 border border-gray-300 text-center">{entry.category}</td>
-              <td className="p-2 border border-gray-300 text-center">{entry.amount}</td>
+              <td className={`p-2 border border-gray-300 text-center tracking-wider ${entry.type == 1 ? 'text-green-700' : 'text-red-700' }`}>{entry.amount - 0}</td>
             </tr>
           ))}
         </tbody>

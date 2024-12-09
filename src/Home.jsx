@@ -10,8 +10,8 @@ const Home = () => {
   const [expenses, setExpenses] = useState([]); //All expenses
   const [mode, setMode] = useState("add"); // ['add', 'view']
   const [error, setError] = useState(null);
-  const [income, setIncome] = useState(0)
-  const [expense, setExpense] = useState(0)
+  const [income, setIncome] = useState(0);
+  const [expense, setExpense] = useState(0);
   const {
     register,
     handleSubmit,
@@ -27,47 +27,46 @@ const Home = () => {
     };
     setExpenses((prev) => [...prev, newTodo]);
     setMode("view");
-    data.type == 1 ? setIncome(prev => prev + +data.amount) : setExpense(prev => prev + +data.amount)
-    reset()
+    data.type == 1
+      ? setIncome((prev) => prev + +data.amount)
+      : setExpense((prev) => prev + +data.amount);
+    reset();
   };
-  
+
   //* func On Cancel Btn
   const handleCancel = () => {
-    reset()
+    reset();
     setMode("view");
     setError(null);
   };
 
-return (
-  <div className="min-h-screen bg-green-100 relative">
-    <Navbar />
-    <Header income={income} expense={expense}/>
-    
-    {mode == "add" ? (
-      <ExpenseForm
-        mode={mode}
-        onCancel={handleCancel}
-        register={register}
-        watch={watch}
-        handleSubmit={handleSubmit}
-        onSubmit={onSubmit}
+  return (
+    <div className="min-h-screen bg-green-100 relative">
+      <Navbar />
+      <Header income={income} expense={expense} />
+
+      {mode == "add" ? (
+        <ExpenseForm
+          mode={mode}
+          onCancel={handleCancel}
+          register={register}
+          watch={watch}
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
         />
       ) : (
-      <div className="w-3/4 grid pr-16">
-        <Table
-        expenses={expenses}
-        />
-        <button
-          onClick={() => setMode("add")}
-          className="bg-[#6C63FF] text-[#F7F7F7] rounded-sm justify-self-end py-2 px-4 text-2xl box-content mt-4 max-w-6"
+        <div className="w-3/4 grid pr-16">
+          <Table expenses={expenses} income={income} expense={expense} />
+          <button
+            onClick={() => setMode("add")}
+            className="bg-[#6C63FF] text-[#F7F7F7] rounded-sm justify-self-end py-2 px-4 text-2xl box-content mt-4 max-w-6"
           >
-          +
-        </button>
-      </div>
-    )}
-  </div>
-);
+            +
+          </button>
+        </div>
+      )}
+    </div>
+  );
 };
-
 
 export default Home;
