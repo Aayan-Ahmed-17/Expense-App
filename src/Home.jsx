@@ -42,7 +42,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-[40rem] bg-green-100 grid grid-rows-10 gap-3 grid-cols-12 mt-16 px-4 py-3">
+    <div className="h-[40rem] bg-green-100 grid grid-rows-10 gap-3 grid-cols-12 mt-16 px-4 py-3">
       <Navbar />
 
       {mode == "add" ? (
@@ -53,28 +53,28 @@ const Home = () => {
           watch={watch}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
-          tailwindClasses='row-span-5 col-span-12 mt-16'
-          />
-        ) : (
-          <>
+          tailwindClasses="row-span-5 col-span-12 mt-16"
+        />
+      ) : (
+        <>
           <Header
             income={income}
             expense={expense}
             tailwindClasses="col-span-12 row-span-2 "
           />
           {/* <div className=" grid pr-16"> */}
-          <div className="col-span-8 row-span-8 flex flex-col items-end">
+          <div className="col-span-9 row-span-8 flex flex-col w-[95%]">
             <Table expenses={expenses} income={income} expense={expense} />
             <button
               onClick={() => setMode("add")}
-              className="bg-[#6C63FF] text-[#F7F7F7] rounded-sm justify-start mr-0 py-2 px-4 text-2xl box-content mt-4 max-w-6"
+              className="bg-[#6C63FF] text-[#F7F7F7] rounded-sm self-end mr-0 py-2 px-4 text-2xl box-content mt-4 max-w-6"
             >
               +
             </button>
           </div>
           <Sidebar
             expenses={expenses}
-            tailwindClasses="col-span-4 row-span-8"
+            tailwindClasses="col-span-3 row-span-8"
           />
           {/* </div> */}
         </>
