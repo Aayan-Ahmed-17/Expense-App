@@ -44,24 +44,24 @@ const Home = () => {
   return (
     <div className="h-[40rem] bg-green-100 grid grid-rows-10 gap-3 grid-cols-12 mt-16 px-4 py-3">
       <Navbar />
+      <Header
+        income={income}
+        expense={expense}
+        tailwindClasses="col-span-12 row-span-2 "
+      />
 
       {mode == "add" ? (
         <ExpenseForm
-          mode={mode}
-          onCancel={handleCancel}
-          register={register}
-          watch={watch}
-          handleSubmit={handleSubmit}
-          onSubmit={onSubmit}
-          tailwindClasses="row-span-5 col-span-12 mt-16"
+        mode={mode}
+        onCancel={handleCancel}
+        register={register}
+        watch={watch}
+        handleSubmit={handleSubmit}
+        onSubmit={onSubmit}
+        tailwindClasses="row-span-6 col-span-9 mt-16"
         />
       ) : (
         <>
-          <Header
-            income={income}
-            expense={expense}
-            tailwindClasses="col-span-12 row-span-2 "
-          />
           {/* <div className=" grid pr-16"> */}
           <div className="col-span-9 row-span-8 flex flex-col w-[95%]">
             <Table expenses={expenses} income={income} expense={expense} />
@@ -72,13 +72,11 @@ const Home = () => {
               +
             </button>
           </div>
-          <Sidebar
-            expenses={expenses}
-            tailwindClasses="col-span-3 row-span-8"
-          />
+
           {/* </div> */}
         </>
       )}
+      <Sidebar expenses={expenses} tailwindClasses="col-span-3 row-span-8" />
     </div>
   );
 };
