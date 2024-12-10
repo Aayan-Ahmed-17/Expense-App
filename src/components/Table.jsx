@@ -31,14 +31,14 @@ const Table = ({ expenses, income, expense }) => {
                 {entry.item}
               </td>
               <td className="p-2 border border-gray-300 text-center">
-                {entry.category}
+                {entry.name}
               </td>
               <td
                 className={`p-2 border border-gray-300 text-center tracking-wider ${
                   entry.type == 1 ? "text-green-700" : "text-red-700"
                 }`}
               >
-                {entry.amount - 0}
+                {entry.value - 0}
               </td>
             </tr>
           ))}

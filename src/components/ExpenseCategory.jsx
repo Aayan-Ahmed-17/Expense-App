@@ -13,7 +13,7 @@ function ExpenseCategory({register , selectedType, initialValue}) {
     // }, [selectedType])
     
     return (
-            <select className="select w-full max-w-xs px-1" name="category" {...register("category", {required : true})} value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
+            <select className="select w-full max-w-xs px-1" name="category" {...register("name", {required : true})} value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
                 <option disabled value=''>Select Category</option>
                 {selectedType == 1 ? cashInCategories.map((e, i) => {
                     return <option value={e} key={i}>{e}</option>
