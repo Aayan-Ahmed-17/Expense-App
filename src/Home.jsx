@@ -76,7 +76,7 @@ const Home = () => {
           {/* </div> */}
         </>
       )}
-      <Sidebar expenses={expenses} tailwindClasses="col-span-3 row-span-8" />
+      <Sidebar expense={expense} expenses={expenses} tailwindClasses="col-span-3 row-span-8" />
     </div>
   );
 };
