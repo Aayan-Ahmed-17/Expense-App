@@ -42,31 +42,38 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-green-100 grid grid-rows-10">
+    <div className="min-h-[40rem] bg-green-100 grid grid-rows-10 gap-3 grid-cols-12 mt-16 px-4 py-3">
       <Navbar />
-      {/* <Header income={income} expense={expense} />
-      <Sidebar expenses={expenses}/>
+      <Header
+        income={income}
+        expense={expense}
+        tailwindClasses="col-span-12 row-span-2 "
+      />
 
-      {mode == "add" ? (
-        <ExpenseForm
-          mode={mode}
-          onCancel={handleCancel}
+      {/* {mode == "add" ? (
+         <ExpenseForm
+         mode={mode}
+         onCancel={handleCancel}
           register={register}
           watch={watch}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
-        />
-      ) : (
-        <div className="w-3/4 grid pr-16">
-          <Table expenses={expenses} income={income} expense={expense} />
+          />
+        ) : ( */}
+      <>
+        {/* <div className=" grid pr-16"> */}
+        <div className="col-span-8 row-span-8 flex flex-col items-end">
+          <Table expenses={expenses} income={income} expense={expense}/>
           <button
             onClick={() => setMode("add")}
-            className="bg-[#6C63FF] text-[#F7F7F7] rounded-sm justify-self-end py-2 px-4 text-2xl box-content mt-4 max-w-6"
+            className="bg-[#6C63FF] text-[#F7F7F7] rounded-sm justify-start mr-0 py-2 px-4 text-2xl box-content mt-4 max-w-6"
           >
             +
           </button>
         </div>
-      )} */}
+        <Sidebar expenses={expenses} tailwindClasses="col-span-4 row-span-8" />
+        {/* </div> */}
+      </>
     </div>
   );
 };

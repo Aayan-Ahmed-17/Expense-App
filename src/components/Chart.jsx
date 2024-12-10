@@ -10,10 +10,10 @@ const data01 = [
   { name: "Group F", value: 189 },
 ];
 
-const Chart = ({expenses}) => {
+const Chart = ({expenses , tailwindClasses}) => {
     console.log("chart==>", expenses)
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer className={`${tailwindClasses}`}>
       <PieChart width={400} height={400}>
         <Pie
           dataKey="value"

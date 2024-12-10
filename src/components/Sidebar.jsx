@@ -1,17 +1,29 @@
 import React from "react";
 import Chart from "./Chart";
 
-const Sidebar = ({ expenses }) => {
+const Sidebar = ({ expenses , tailwindClasses}) => {
   return (
-    <div className="w-72 h-[91.5%] overflow-hidden bg-red-200 absolute right-0">
-      <Chart expenses={expenses} />
-      <ul className="bg-green-600 min-h-14 w-10 -mt-32">
-        {expenses.length > 0 &&
+    <div className={` bg-red-200 rounded-lg  ${tailwindClasses}`}>
+        <h2 className="row-span-1 ">You Expensed Total Amount Of 2000$</h2>
+        <div className="grid grid-rows-7">
+
+      <Chart expenses={expenses} tailwindClasses='row-span-4'/>
+      <ul className="bg-green-600 row-span-3">
+        {/* {expenses.length > 0 &&
           expenses.map((e, i) => {
             console.log(e);
             return <li>{e.category}</li>;
-          })}
+            })} */}
+          <li>kjdfldjas</li>
+          <li>kjdfldjas</li>
+          <li>kjdfldjas</li>
+          <li>kjdfldjas</li>
+          <li>kjdfldjas</li>
+          <li>kjdfldjas</li>
+          <li>kjdfldjas</li>
+          <li>kjdfldjas</li>
       </ul>
+            </div>
     </div>
   );
 };
