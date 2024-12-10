@@ -14,6 +14,7 @@ function ExpenseForm({
   handleSubmit,
   onSubmit,
   register,
+  tailwindClasses
 }) {
   const [error, setError] = useState("");
 
@@ -24,7 +25,7 @@ function ExpenseForm({
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-[29rem] grid grid-rows-6 min-h-64 mx-auto border-2 border-slate-500 rounded-xl mt-8 pt-2"
+        className={` grid grid-rows-6 mx-auto border-2 border-slate-500 rounded-xl pt-2 ${tailwindClasses}`}
       >
         <h2 className="mx-auto text-xl row-span-1">
           Enter Informations
