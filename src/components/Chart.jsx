@@ -30,7 +30,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
       <ResponsiveContainer className={`${tailwindClasses}`}>
         <PieChart width={400} height={400}>
           <Pie
-            data={expenses}
+            data={data}
             cx="50%"
             cy="50%"
             labelLine={false}
